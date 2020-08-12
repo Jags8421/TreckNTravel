@@ -10,6 +10,13 @@ app.use(require("express-session")({
 	resave:false,
 	saveUninitialized:false
 }))
+var mongoose = require("mongoose");
+mongoose.connect('mongodb+srv://shubakarYelpCampDB:subbuP123456.@cluster0.ao3pb.mongodb.net/<dbname>?retryWrites=true&w=majority', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+.then(() => console.log('Connected to DataBase!'))
+.catch(error => console.log(error.message));
 //Declaring directory to look for css and js files
 app.use(express.static(__dirname + '/public'));
 //Method override allows us to have PUT and DELETE requests
@@ -37,6 +44,6 @@ app.use(authrouter);
 app.get("*",function(req,res){
 	res.send("Improper Request");
 });
-app.listen(3000,function(){
+app.listen(process.env.PORT, process.env.IP,function(){
 	console.log("Yelp Camp is Started");
 });
