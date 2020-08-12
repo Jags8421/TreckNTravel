@@ -11,7 +11,7 @@ app.use(require("express-session")({
 	saveUninitialized:false
 }))
 var mongoose = require("mongoose");
-mongoose.connect('mongodb+srv://shubakarYelpCampDB:subbuP123456.@cluster0.ao3pb.mongodb.net/<dbname>?retryWrites=true&w=majority', {
+mongoose.connect(process.env.DATABASEURL, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
