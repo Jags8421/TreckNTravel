@@ -1,0 +1,45 @@
+.navbar{
+	font-family: 'Sriracha', cursive;
+}
+.jumbotron{
+	margin: 20px auto;
+	background-image:url("https://www.renderhub.com/radju/snow-mountain2/snow-mountain2-01.jpg");
+	background-size:cover;
+	box-shadow: 10px 10px 5px #aaaaaa;
+	background-position:20% 10%;
+	background-color: rgba(245,245,245,0.4);
+	background-blend-mode: lighten;
+	font-family: 'Lemonada', cursive;
+}
+.campgroundscolumn{
+	float: none; 
+	margin: 0 auto;
+}
+.card{
+	width: 18rem;
+	float: none;
+	margin: 20px auto;
+	border: 1px solid #BFBFBF; 
+	box-shadow: 10px 10px 5px #aaaaaa;
+	font-family: 'Amiri', serif;
+}
+.card-img-top{
+	height:10rem;
+}
+.show-h1{
+	text-align:center;
+}
+.campgroundimage{
+	width:100%;
+	height:100%;
+	padding-left:0;
+	padding-right:0;
+	border: 1px solid #BFBFBF;
+	box-shadow: 10px 10px 5px #aaaaaa;
+}
+.description{
+	margin-top:30px;
+	margin-bottom:20px;
+	padding-bottom:10px;
+	background-color:rgb(227, 247, 225);
+}

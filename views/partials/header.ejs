@@ -1,0 +1,41 @@
+<!--Header for Campgrounds and all other pages(excluding Home page)-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<title>Yelp Camp</title>
+		<link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Lemonada&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
+		<link href="/assets/styles.css" rel="stylesheet" type="text/css">
+	</head>
+	<body class="bg-light">
+		<!--Navigation Bar-->
+		<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+			<div class="container">
+  				<a class="navbar-brand" href="/">Yelp Camp</a>
+  				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    				<span class="navbar-toggler-icon"></span>
+  				</button>
+  				<div class="collapse navbar-collapse" id="navbarNav">
+    				<ul class="navbar-nav ml-auto">
+						<% if(!currentuser){%>
+      						<li class="nav-item active">
+        						<a class="nav-link" href="/login">Login <span class="sr-only">(current)</span></a>
+      						</li>
+							<li class="nav-item active">
+        						<a class="nav-link" href="/signup">Sign Up <span class="sr-only">(current)</span></a>
+      						</li>
+						<% } else {%>
+							<li class="nav-item active">
+        						<a class="nav-link" href="#"><%=currentuser.username%> <span class="sr-only">(current)</span></a>
+      						</li>
+							<li class="nav-item active">
+        						<a class="nav-link" href="/logout">Logout <span class="sr-only">(current)</span></a>
+      						</li>
+						<% } %>
+    				</ul>
+  				</div>
+			</div>
+		</nav>
+		

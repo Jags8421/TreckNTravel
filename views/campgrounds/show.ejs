@@ -1,0 +1,62 @@
+<!--Web page to show Campground and Comments associated with it.-->
+<%-include("../partials/header")%>
+<!--Title of Campground-->
+<h1 class="show-h1">
+	<%=camp.name%>
+</h1>
+<!--Display Campground image in a Container-->
+<div class="container  rounded rounded-lg campgroundimage">	
+	<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" >
+  		<div class="carousel-inner">
+    		<div class="carousel-item active">
+      			<img class="d-block w-100"  src="<%=camp.image%>" alt="Campground Image">
+    		</div>
+  		</div>
+	</div>
+</div>
+<!--Show Campground description-->
+<div class="container border border-dark rounded rounded-lg description">	
+	<p>
+		<h4>	
+			author: <%=camp.author.user%>
+		</h4><br>
+		<strong>Rating: </strong><%=camp.rating%>/5<br>
+		<%=camp.description%>
+	</p>
+	<% if(currentuser && camp.author.id.equals(currentuser._id)){%>
+		<a href="/index/<%=camp._id%>/edit" class="btn btn-info btn-sm ">Update</a>
+		<form method="post" action="/index/<%=camp._id%>?_method=DELETE" style="display:inline;">
+			<button type="submit" class="btn btn-danger btn-sm">
+				Delete
+			</button>
+		</form>
+	<%}%>
+</div>
+<!--Button to add a new Comment-->
+<div class="container">
+	<a href="/index/<%=camp._id%>/comments" class="btn btn-success">Add Comments</a>
+</div>
+<!--Display Comments associated with Campground-->
+<%camp.comments.forEach(function(comment){%>
+	<div class="container bg-white border border-dark rounded rounded-lg description" >
+		<p>
+			<h4><%=comment.author.user%>:</h4><br>
+			<strong>Rating: </strong><%=comment.rating%>/5<br>
+			<%=comment.comment%>
+		</p>
+		<%if(currentuser && comment.author.id.equals(currentuser._id)){%>
+			<a href="/index/<%=camp._id%>/comment/edit/<%=comment._id%>" class="btn btn-info btn-sm ">Edit</a>
+			<form action="/index/<%=camp._id%>/comment/<%=comment._id%>?_method=DELETE" method="post" style="display:inline;">
+				<button type="submit" class="btn btn-danger btn-sm">
+					Delete
+				</button>
+			</form>
+		<% } %>
+	</div>
+<%})%>
+<!--Button to Go Back to Campgrounds page-->
+<div class="container" style="margin-top:10px; margin-bottom:20px">
+	<a href="/index" class="btn btn-primary btn-sm">Campgrounds</a>
+</div>
+
+<%-include("../partials/footer")%>

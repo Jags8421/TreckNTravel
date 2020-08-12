@@ -1,0 +1,31 @@
+<!--Web Page to show list all Campgrounds in Data Base-->
+<%-include("../partials/header")%>
+<div class="container">
+	<div class="jumbotron">
+  		<h1 class="display-4">Camp Grounds</h1>
+  		<p class="lead">Choose Your Favourate Camp Ground</p>
+  		<p class="lead">
+    		<a class="btn btn-primary btn-lg" href="/index/new" role="button">Add Camp Ground</a>
+  		</p>
+	</div>
+</div>
+<!--Display all Campgrounds in Data Base-->
+<div class="container">
+  	<div class="row">
+	<% items.forEach(function(item){ %>
+		<div>  
+    		<div class="col-sm-12 col-md-6 col-lg-3 campgroundscolumn" >	
+				<a href="/index/<%=item['id']%>">
+					<div class="card">
+ 		 				<img class="card-img-top" src="<%=item['image']%>" alt="Card image cap" >
+  						<div class="card-body">
+    						<h5 class="card-title"><%=item["name"]%></h5>
+  						</div>
+					</div>
+				</a>
+			</div>
+    	</div>
+	<%})%>
+  </div>
+</div>
+<%-include("../partials/footer")%>
