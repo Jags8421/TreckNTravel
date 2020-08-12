@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/db_name', {
+mongoose.connect('mongodb+srv://shubakarYelpCampDB:subbuP123456.@cluster0.ao3pb.mongodb.net/<dbname>?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })

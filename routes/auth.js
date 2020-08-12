@@ -25,17 +25,28 @@ router.get("/signup",function(req,res){
 //Create New User
 router.post("/signup",function(req,res){
 	//Defining new user 
-	var newuser=new User({username:req.body.username});
-	//Creating new User(save to database)
-	User.register(newuser,req.body.password,function(err,user){
+	User.findOne({username:req.body.username},function(err,user){
 		if(err){
 			console.log(err);
-			res.redirect("/signup",{currentuser:req.user});
+		}
+		else if(user===null){
+			var newuser=new User({username:req.body.username});
+			//Creating new User(save to database)
+			User.register(newuser,req.body.password,function(err,user){
+				if(err){
+					console.log(err);
+					res.redirect("/signup",{currentuser:req.user});
+				}
+				else{
+					res.redirect("/index");
+				}
+			});
 		}
 		else{
-			res.redirect("/index");
+			res.render("signuperror",{currentuser:req.user});
 		}
 	});
+	
 });
 //Login form
 router.get("/login",function(req,res){

@@ -1,0 +1,29 @@
+<!--Signup form if user already exist in the data base-->
+<%-include("partials/header")%>
+<!--container to hole Signup form-->
+<div class="container">
+	
+	<h1 style="text-align:center;">
+		User with given User name exist Please tyr another Username
+	</h1>
+	<div class="row">
+		<div style="margin:30px auto;">
+			<form action="/signup" method="post">
+  	  			<div class="form-group">
+      				<input type="text" class="form-control" id="inputEmail3" name="username" placeholder="username" style="width: 20rem;">
+		  		</div>
+				<div class="form-group">
+      				<input type="password" class="form-control" id="inputPassword3" name="password" placeholder="password" style="width: 20rem;x">
+				</div>
+				<div class="form-group">
+      				<button type="submit" class="btn btn-primary btn-block" >Sign Up</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<!--Button to go to Campgrounds-->
+<div class="container">
+	<a href="/index" class="btn btn-primary btn-sm">Campgrounds</a>
+</div>
+<%-include("partials/footer")%>
