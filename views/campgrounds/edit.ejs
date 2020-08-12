@@ -9,13 +9,13 @@
 		<div style="margin:30px auto;">
 			<form action="/index/<%=camp._id%>?_method=PUT" method="post">
   	  			<div class="form-group">
-      				<input type="text" class="form-control" id="inputEmail3" name="name" placeholder="Name" style="width: 20rem;"value="<%=camp.name%>">
+      				<input type="text" class="form-control" id="inputEmail3" name="name" placeholder="Name" style="width: 20rem;"value="<%=camp.name%>" required>
 		  		</div>
     			<div class="form-group">
-      				<input type="text" class="form-control" id="inputPassword3" name="image" placeholder="ImageURL" style="width: 20rem;" value="<%=camp.image%>">
+      				<input type="text" class="form-control" id="inputPassword3" name="image" placeholder="ImageURL" style="width: 20rem;" value="<%=camp.image%>" required>
 				</div>
 				<div class="form-group">
-      				<input type="text" class="form-control" id="inputPassword3" name="description" placeholder="Description" style="width: 20rem;x" value="<%=camp.description%>">
+      				<input type="text" class="form-control" id="inputPassword3" name="description" placeholder="Description" style="width: 20rem;x" value="<%=camp.description%>" required>
 				</div>
 				<div class="form-group">
 					<select class="form-control" id="exampleFormControlSelect1" name="rating">
