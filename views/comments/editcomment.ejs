@@ -9,7 +9,7 @@
 		<div style="margin:30px auto; width:30rem;">
 			<form action="/index/<%=id._id%>/comment/<%=commentid._id%>?_method=PUT" method="post">
 				<div class="form-group">
-      				<textarea  rows="4" col="30" class="form-control" name="comment" placeholder="Add Comment"><%=commentid.comment%></textarea>
+      				<textarea  rows="4" col="30" class="form-control" name="comment" placeholder="Add Comment" required><%=commentid.comment%></textarea>
 				</div>
 				<div class="form-group">
 					<select class="form-control" id="exampleFormControlSelect1" name="rating">
